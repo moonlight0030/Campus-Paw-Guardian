@@ -1,0 +1,113 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@font-face {
+  font-family: 'ResourceHanRoundedCN';
+  src: url('https://resource-static.bj.bcebos.com/fonts-skill/ResourceHanRoundedCN-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HarmonyOSSans';
+  src: url('https://resource-static.bj.bcebos.com/fonts-skill/HarmonyOSSans_Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 1rem;
+
+    /* 暖橙暖阳 —— 温馨治愈校园公益 */
+    --background: 34 100% 96%;
+    --foreground: 24 33% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 33% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 33% 18%;
+    --primary: 14 78% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 33 80% 92%;
+    --secondary-foreground: 14 60% 35%;
+    --muted: 33 60% 93%;
+    --muted-foreground: 24 18% 45%;
+    --accent: 37 91% 55%;
+    --accent-foreground: 24 40% 18%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 40% 88%;
+    --input: 30 40% 88%;
+    --ring: 14 78% 55%;
+
+    /* 图表色 —— 暖橙系衍生 */
+    --chart-1: 14 78% 55%;
+    --chart-2: 37 91% 55%;
+    --chart-3: 150 45% 50%;
+    --chart-4: 24 60% 70%;
+    --chart-5: 350 60% 62%;
+
+    /* 侧栏 —— 暖白磨砂 */
+    --sidebar-background: 33 80% 97%;
+    --sidebar-foreground: 24 33% 22%;
+    --sidebar-primary: 14 78% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 33 70% 92%;
+    --sidebar-accent-foreground: 14 60% 35%;
+    --sidebar-border: 30 40% 88%;
+    --sidebar-ring: 14 78% 55%;
+
+    /* 品牌辅助 */
+    --success: 150 45% 45%;
+    --success-foreground: 0 0% 100%;
+    --info: 200 60% 50%;
+    --info-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'HarmonyOSSans', system-ui, -apple-system, 'PingFang SC', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'ResourceHanRoundedCN', 'HarmonyOSSans', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+}
+
+@layer utilities {
+  .font-rounded {
+    font-family: 'ResourceHanRoundedCN', 'HarmonyOSSans', system-ui, sans-serif;
+  }
+
+  .glass-card {
+    background: hsla(0, 0%, 100%, 0.7);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
